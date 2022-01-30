@@ -18,12 +18,6 @@ library(datasauRus)
 
 ### Exercise 2
 
-The answers for this exercise are given for you below. But you should
-clean up some of the narrative so that it only includes what you want to
-turn in.
-
-First let’s plot the data in the dino dataset:
-
 ``` r
 dino_data <- datasaurus_dozen %>%
   filter(dataset == "dino")
@@ -33,8 +27,6 @@ ggplot(data = dino_data, mapping = aes(x = x, y = y)) +
 ```
 
 ![](lab-01-hello-r_files/figure-gfm/plot-dino-1.png)<!-- -->
-
-And next calculate the correlation between `x` and `y` in this dataset:
 
 ``` r
 dino_data %>%
@@ -48,12 +40,29 @@ dino_data %>%
 
 ### Exercise 3
 
-Add code and narrative as needed. Note that the R chunks are labeled
-with `plot-star` and `cor-star` to provide spaces to place the code for
-plotting and calculating the correlation coefficient. To finish, clean
-up the narrative by removing these instructions.
+``` r
+star_data <- datasaurus_dozen %>%
+  filter(dataset == "star")
 
-I’m some filler text, you should replace me with more meaningful text…
+ggplot(data = star_data, mapping = aes(x = x, y = y)) +
+  geom_point()
+```
+
+![](lab-01-hello-r_files/figure-gfm/plot-star-1.png)<!-- -->
+
+Meaningful text: this is cool. I got this on my first go…yaya!
+
+``` r
+star_data %>%
+  summarize(r = cor(x, y))
+```
+
+    ## # A tibble: 1 × 1
+    ##         r
+    ##     <dbl>
+    ## 1 -0.0630
+
+The correlation of the star data is very similar to the dino data.
 
 ### Exercise 4
 
