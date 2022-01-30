@@ -1,6 +1,6 @@
 ---
 title: "Lab 01 - Hello R"
-author: "Mar Schieber"
+author: "Marq Schieber"
 date: "1/21/2022"
 output: github_document
 ---
